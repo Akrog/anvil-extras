@@ -39,5 +39,7 @@ class Demo(DemoTemplate):
         else:
             self.timer_1.interval = 0
 
-    def switch_1_changed(self, **event_args):
-        self.refresh_data_bindings()
+    def switch_1_change(self, **event_args):
+#         self.refresh_data_bindings()
+      print('foo')
+

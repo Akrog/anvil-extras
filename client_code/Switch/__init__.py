@@ -91,6 +91,9 @@ session.style_injector.inject(css)
 class Switch(SwitchTemplate):
     def __init__(self, checked_colour, **properties):
         self.uid = session.get_uid()
+        self.checked = self.check_box.checked
+        self.set_event_handler = self.check_box.set_event_handler
+#         self.check_box.set_event_handler('change')
         self._checked = False
         css = f"""
 .anvil-role-switch-{self.uid} input:checked + span::before {{
@@ -104,13 +107,13 @@ class Switch(SwitchTemplate):
         session.style_injector.inject(css)
         self.check_box.role = ["switch", f"switch-{self.uid}"]
         self.init_components(**properties)
+    
+#     @property
+#     def checked(self):
+#         return self._checked
 
-    @property
-    def checked(self):
-        return self._checked
-
-    @checked.setter
-    def checked(self, value):
-        self._checked = value
-        self.refresh_data_bindings()
-        self.raise_event("changed")
+#     @checked.setter
+#     def checked(self, value):
+#         self._checked = value
+#         self.refresh_data_bindings()
+#         self.raise_event("changed")
