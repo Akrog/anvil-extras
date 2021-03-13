@@ -40,9 +40,9 @@ class Demo(DemoTemplate):
             self.timer_1.interval = 0
 
     def switch_1_change(self, **event_args):
-#         self.refresh_data_bindings()
-      print('foo')
-      self.switch_1.checked_color = 'red'
+        self.refresh_data_bindings()
+        print('foo')
+        self.switch_1.checked_color = 'red'
 
     def switch_1_show(self, **event_args):
       print('on screen')

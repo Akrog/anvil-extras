@@ -88,17 +88,13 @@ css = """
 session.style_injector.inject(css)
 from anvil import CheckBox
 
-class Switch(SwitchTemplate):
+class Switch(CheckBox):
     def __init__(self, checked_color, **properties):
-        print(properties)
-        self.uid = session.get_uid()
-        css = '\n'.join(self._get_css_rules(checked_color))
-        self._sheet = session.style_injector.inject(css).sheet
-        self.role = ["switch", f"switch-{self.uid}"]
-        self.init_components(**properties)
-        print(properties)
-        print(checked_color)
         CheckBox.__init__(self, **properties)
+        self._uid = session.get_uid()
+        css = '\n'.join(self._get_css_rules(checked_color))
+        self._sheet = session.style_injector.inject(css, self._uid)
+        self.role = ["switch", f"switch-{self._uid}"]
     
     @property
     def checked_color(self):
@@ -113,8 +109,9 @@ class Switch(SwitchTemplate):
         self._checked_color = value
       
     def _get_css_rules(self, checked_color):
-      return (f".anvil-role-switch-{self.uid} input:checked + span::before {{background-color: {checked_color};}}",
-              f".anvil-role-switch-{self.uid} input:focus + span::before {{box-shadow: 0 0 1px {checked_color};}}")
+      # we could use style here but you can't do style on pseudo elements
+      return (f".anvil-role-switch-{self._uid} input:checked + span::before {{background-color: {checked_color};}}",
+              f".anvil-role-switch-{self._uid} input:focus + span::before {{box-shadow: 0 0 1px {checked_color};}}")
 
 
   

@@ -31,13 +31,14 @@ class Injector:
     def __init__(self):
         self.injected = {}
 
-    def inject(self, css):
-        sheet = self.injected.get(css, None)
-        if sheet is None:
-            sheet = document.createElement("style")
-            sheet.innerHTML = css
-            document.body.appendChild(sheet)
-            self.injected[css] = sheet
-        return sheet
+    def inject(self, css, ref=None):
+        ref = ref or css
+        style_element = self.injected.get(ref, None)
+        if style_element is None:
+            style_element = document.createElement("style")
+            style_element.innerHTML = css
+            document.body.appendChild(style_element)
+            self.injected[ref] = style_element
+        return style_element.sheet
         
         
