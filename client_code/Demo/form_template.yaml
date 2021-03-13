@@ -52,10 +52,10 @@ components:
     col_widths: {}
     grid_position: YOUXJW,SWKASQ
 - type: form:Switch
-  properties: {}
+  properties: {checked_color: '#2196F3', checked: false, text: foo}
   name: switch_1
   layout_properties: {grid_position: 'POHPCS,SKALDC'}
-  event_bindings: {changed: switch_1_changed, change: switch_1_change}
+  event_bindings: {changed: switch_1_changed, change: switch_1_change, show: switch_1_show}
 - type: Label
   properties: {}
   name: label_2

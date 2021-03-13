@@ -1,10 +1,17 @@
 properties:
-- {name: checked_colour, type: color, default_value: '#2196F3', default_binding_prop: true}
+- {name: checked_color, type: color, default_value: '#2196F3', default_binding_prop: true}
 - {name: checked, type: boolean, default_value: false}
+- {name: text, type: string, default_value: ''}
 is_package: true
 events:
 - {name: change, default_event: true}
+- {name: show}
+- {name: hide}
 custom_component: true
+components: []
 container:
   type: CheckBox
-  properties: {col_widths: '{}'}
+  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
+    visible: true, text: text, font_size: null, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: false, checked: false, underline: false}
+  event_bindings: {}

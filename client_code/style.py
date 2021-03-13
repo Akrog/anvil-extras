@@ -29,12 +29,15 @@ __version__ = "1.0.0"
 
 class Injector:
     def __init__(self):
-        self.injected = []
+        self.injected = {}
 
     def inject(self, css):
-        hashed = hash(css)
-        if hashed not in self.injected:
+        sheet = self.injected.get(css, None)
+        if sheet is None:
             sheet = document.createElement("style")
             sheet.innerHTML = css
             document.body.appendChild(sheet)
-            self.injected.append(hashed)
+            self.injected[css] = sheet
+        return sheet
+        
+        

@@ -42,4 +42,9 @@ class Demo(DemoTemplate):
     def switch_1_change(self, **event_args):
 #         self.refresh_data_bindings()
       print('foo')
+      self.switch_1.checked_color = 'red'
+
+    def switch_1_show(self, **event_args):
+      print('on screen')
+
 
