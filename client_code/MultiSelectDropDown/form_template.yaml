@@ -33,6 +33,6 @@ container:
       \     data-container=\"body\"\n        data-icon-base=\"fa\"\n        data-tick-icon=\"\
       fa-check\"\n        data-show-subtext=\"true\"\n        data-selected-text-format=\"\
       count > 3\"\n/>\n<script>\n  // To style only selects with the my-select class\n\
-      \  // $.fn.selectpicker.Constructor.BootstrapVersion = '3';\n  $('.select-picker').selectpicker();\n\
+      \  // $.fn.selectpicker.Constructor.BootstrapVersion = '3';\n  $(() => $('.select-picker').selectpicker());\n\
       \  //      data-live-search=\"true\"\n  \n</script>\n"}
   event_bindings: {}
