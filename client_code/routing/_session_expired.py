@@ -1,3 +1,6 @@
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 # MIT License
 #
 # Copyright (c) 2021 The Anvil Extras project team members listed at
