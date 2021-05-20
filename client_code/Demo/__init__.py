@@ -25,10 +25,12 @@
 from ..utils import auto_refreshing
 from ._anvil_designer import DemoTemplate
 
+from .. import utils
+
+print(dir(utils))
+print(utils.wait_for_writeback)
 
 __version__ = "1.1.0"
-
-
 
 @auto_refreshing
 class Demo(DemoTemplate):

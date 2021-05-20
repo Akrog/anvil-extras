@@ -27,26 +27,27 @@ from functools import cache
 
 __version__ = "1.1.0"
 
-__dir__ = ["auto_refreshing", "wait_for_writeback", "timed", "BindingRefreshDict"]
+def __dir__():
+  return ["auto_refreshing", "wait_for_writeback", "timed", "BindingRefreshDict"]
 
 
 @cache
 def __getattr__(name):
     # todo use dynamic imports but __import__ is not yet supported in skult
     if name == "auto_refreshing":
-        from .auto_refreshing import auto_refreshing
+        from ._auto_refreshing import auto_refreshing
 
         return auto_refreshing
     elif name == "timed":
-        from .timed import timed
+        from ._timed import timed
 
         return timed
     elif name == "wait_for_writeback":
-        from .writeback_waiter import wait_for_writeback
+        from ._writeback_waiter import wait_for_writeback
 
         return wait_for_writeback
     elif name == "BindingRefreshDict":
-        from .auto_refreshing import BindingRefreshDict
+        from ._auto_refreshing import BindingRefreshDict
 
         return BindingRefreshDict
     else:
