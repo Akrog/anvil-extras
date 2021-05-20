@@ -25,7 +25,9 @@
 from ..utils import auto_refreshing
 from ._anvil_designer import DemoTemplate
 
+
 __version__ = "1.1.0"
+
 
 
 @auto_refreshing
