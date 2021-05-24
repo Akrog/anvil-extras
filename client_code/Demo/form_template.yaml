@@ -112,7 +112,7 @@ components:
     col_widths: {}
     grid_position: RDPMGN,GEQMNU
 - type: form:Switch
-  properties: {tooltip: '', enabled: false, foreground: null, visible: true, text: switch,
+  properties: {tooltip: '', enabled: true, foreground: null, visible: true, text: switch,
     font_size: 18, spacing_above: small, checked_color: '', spacing_below: small,
     background: '', checked: true}
   name: switch_1
