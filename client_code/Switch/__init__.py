@@ -37,6 +37,11 @@ css = """
   padding: 0 !important;
 }
 
+.anvil-switch .checkbox {
+  display: flex;
+  align-items: center;
+}
+
 .anvil-switch input {
   opacity: 0;
   height: 0;
@@ -88,6 +93,13 @@ css = """
 }
 .anvil-switch input:focus + span::before {
   box-shadow: 0 0 1px var(--color);
+}
+
+.anvil-switch[disabled] label {
+  cursor: not-allowed;
+}
+.anvil-switch[disabled] input:checked + span::before {
+  opacity: .7;
 }
 
 """
